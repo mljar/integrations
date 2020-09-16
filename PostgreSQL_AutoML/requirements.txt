@@ -1,2 +1,2 @@
 psycopg2
-mljar-supervised
+git+https://github.com/mljar/mljar-supervised
