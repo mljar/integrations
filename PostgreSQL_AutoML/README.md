@@ -17,13 +17,13 @@ Train AutoML:
 python train_automl.py
 ```
 
-Insert test records:
-```
-python insert_test_records.py
-```
-
 Compute predictions with AutoML and insert into the database:
 ```
 python predict.py
+```
+
+Compute accuracy on live data samples:
+```
+python feedback.py
 ```
 
