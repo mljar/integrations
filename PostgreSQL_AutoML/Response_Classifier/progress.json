@@ -1,0 +1,507 @@
+{
+    "fit_level": "finished",
+    "time_controller": {
+        "total_time_limit": 3600,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "ensemble"
+        ],
+        "algorithms": [
+            "Baseline",
+            "Linear",
+            "Decision Tree",
+            "Random Forest",
+            "Xgboost",
+            "Neural Network"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 3.6152849197387695
+            },
+            {
+                "model_name": "1_Baseline",
+                "model_type": "Baseline",
+                "fit_level": "simple_algorithms",
+                "train_time": 0.3235173225402832
+            },
+            {
+                "model_name": "2_DecisionTree",
+                "model_type": "Decision Tree",
+                "fit_level": "simple_algorithms",
+                "train_time": 15.795124292373657
+            },
+            {
+                "model_name": "3_Linear",
+                "model_type": "Linear",
+                "fit_level": "simple_algorithms",
+                "train_time": 7.447256088256836
+            },
+            {
+                "model_name": "4_Default_RandomForest",
+                "model_type": "Random Forest",
+                "fit_level": "default_algorithms",
+                "train_time": 14.164754152297974
+            },
+            {
+                "model_name": "5_Default_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "default_algorithms",
+                "train_time": 10.481508493423462
+            },
+            {
+                "model_name": "6_Default_NeuralNetwork",
+                "model_type": "Neural Network",
+                "fit_level": "default_algorithms",
+                "train_time": 27.67140245437622
+            },
+            {
+                "model_name": "Ensemble",
+                "model_type": "Ensemble",
+                "fit_level": "ensemble",
+                "train_time": 1.746654748916626
+            }
+        ],
+        "is_hill_climbing": false,
+        "is_stacking": false
+    },
+    "all_params": {
+        "simple_algorithms": [
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {},
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "Response_Classifier/X.parquet",
+                    "y_path": "Response_Classifier/y.parquet",
+                    "results_path": "Response_Classifier"
+                },
+                "learner": {
+                    "model_type": "Baseline",
+                    "ml_task": "binary_classification",
+                    "seed": 1235,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "1_Baseline",
+                "status": "trained",
+                "final_loss": 0.3545081376892318,
+                "train_time": 0.3235173225402832
+            },
+            {
+                "additional": {
+                    "trees_in_step": 1,
+                    "train_cant_improve_limit": 0,
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "job": [
+                            "categorical_to_onehot"
+                        ],
+                        "marital": [
+                            "categorical_to_onehot"
+                        ],
+                        "education": [
+                            "categorical_to_onehot"
+                        ],
+                        "default_payment": [
+                            "categorical_to_int"
+                        ],
+                        "housing": [
+                            "categorical_to_int"
+                        ],
+                        "loan": [
+                            "categorical_to_int"
+                        ],
+                        "month": [
+                            "categorical_to_onehot"
+                        ],
+                        "poutcome": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "Response_Classifier/X.parquet",
+                    "y_path": "Response_Classifier/y.parquet",
+                    "results_path": "Response_Classifier"
+                },
+                "learner": {
+                    "model_type": "Decision Tree",
+                    "ml_task": "binary_classification",
+                    "seed": 1235,
+                    "criterion": "gini",
+                    "max_depth": 3,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "2_DecisionTree",
+                "status": "trained",
+                "final_loss": 0.2691438840933139,
+                "train_time": 15.795124292373657
+            },
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "age": [
+                            "scale_normal"
+                        ],
+                        "job": [
+                            "categorical_to_onehot"
+                        ],
+                        "marital": [
+                            "categorical_to_onehot"
+                        ],
+                        "education": [
+                            "categorical_to_onehot"
+                        ],
+                        "default_payment": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "balance": [
+                            "scale_normal"
+                        ],
+                        "housing": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "loan": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "day": [
+                            "scale_normal"
+                        ],
+                        "month": [
+                            "categorical_to_onehot"
+                        ],
+                        "duration": [
+                            "scale_normal"
+                        ],
+                        "campaign": [
+                            "scale_normal"
+                        ],
+                        "pdays": [
+                            "scale_normal"
+                        ],
+                        "previous": [
+                            "scale_normal"
+                        ],
+                        "poutcome": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "Response_Classifier/X.parquet",
+                    "y_path": "Response_Classifier/y.parquet",
+                    "results_path": "Response_Classifier"
+                },
+                "learner": {
+                    "model_type": "Linear",
+                    "ml_task": "binary_classification",
+                    "seed": 1235,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "3_Linear",
+                "status": "trained",
+                "final_loss": 0.23707852163101176,
+                "train_time": 7.447256088256836
+            }
+        ],
+        "default_algorithms": [
+            {
+                "additional": {
+                    "trees_in_step": 100,
+                    "train_cant_improve_limit": 1,
+                    "min_steps": 1,
+                    "max_steps": 50,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "job": [
+                            "categorical_to_onehot"
+                        ],
+                        "marital": [
+                            "categorical_to_onehot"
+                        ],
+                        "education": [
+                            "categorical_to_onehot"
+                        ],
+                        "default_payment": [
+                            "categorical_to_int"
+                        ],
+                        "housing": [
+                            "categorical_to_int"
+                        ],
+                        "loan": [
+                            "categorical_to_int"
+                        ],
+                        "month": [
+                            "categorical_to_onehot"
+                        ],
+                        "poutcome": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "Response_Classifier/X.parquet",
+                    "y_path": "Response_Classifier/y.parquet",
+                    "results_path": "Response_Classifier"
+                },
+                "learner": {
+                    "model_type": "Random Forest",
+                    "ml_task": "binary_classification",
+                    "criterion": "gini",
+                    "max_features": 0.6,
+                    "min_samples_split": 30,
+                    "max_depth": 6,
+                    "seed": 4,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "4_Default_RandomForest",
+                "status": "trained",
+                "final_loss": 0.23093302877975377,
+                "train_time": 14.164754152297974
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "job": [
+                            "categorical_to_onehot"
+                        ],
+                        "marital": [
+                            "categorical_to_onehot"
+                        ],
+                        "education": [
+                            "categorical_to_onehot"
+                        ],
+                        "default_payment": [
+                            "categorical_to_int"
+                        ],
+                        "housing": [
+                            "categorical_to_int"
+                        ],
+                        "loan": [
+                            "categorical_to_int"
+                        ],
+                        "month": [
+                            "categorical_to_onehot"
+                        ],
+                        "poutcome": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "Response_Classifier/X.parquet",
+                    "y_path": "Response_Classifier/y.parquet",
+                    "results_path": "Response_Classifier"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "objective": "binary:logistic",
+                    "eval_metric": "logloss",
+                    "eta": 0.1,
+                    "max_depth": 6,
+                    "min_child_weight": 1,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "seed": 5,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "5_Default_Xgboost",
+                "status": "trained",
+                "final_loss": 0.20359901998603275,
+                "train_time": 10.481508493423462
+            },
+            {
+                "additional": {
+                    "one_step": 10,
+                    "train_cant_improve_limit": 5,
+                    "max_steps": 500,
+                    "min_steps": 5,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "age": [
+                            "scale_normal"
+                        ],
+                        "job": [
+                            "categorical_to_onehot"
+                        ],
+                        "marital": [
+                            "categorical_to_onehot"
+                        ],
+                        "education": [
+                            "categorical_to_onehot"
+                        ],
+                        "default_payment": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "balance": [
+                            "scale_normal"
+                        ],
+                        "housing": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "loan": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "day": [
+                            "scale_normal"
+                        ],
+                        "month": [
+                            "categorical_to_onehot"
+                        ],
+                        "duration": [
+                            "scale_normal"
+                        ],
+                        "campaign": [
+                            "scale_normal"
+                        ],
+                        "pdays": [
+                            "scale_normal"
+                        ],
+                        "previous": [
+                            "scale_normal"
+                        ],
+                        "poutcome": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "Response_Classifier/X.parquet",
+                    "y_path": "Response_Classifier/y.parquet",
+                    "results_path": "Response_Classifier"
+                },
+                "learner": {
+                    "model_type": "Neural Network",
+                    "ml_task": "binary_classification",
+                    "dense_layers": 2,
+                    "dense_1_size": 32,
+                    "dense_2_size": 16,
+                    "dropout": 0,
+                    "learning_rate": 0.05,
+                    "momentum": 0.9,
+                    "decay": 0.001,
+                    "seed": 6,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "6_Default_NeuralNetwork",
+                "status": "trained",
+                "final_loss": 0.20996754902030157,
+                "train_time": 27.67140245437622
+            }
+        ],
+        "ensemble": [
+            {
+                "model_type": "ensemble",
+                "is_stacked": false,
+                "name": "Ensemble",
+                "status": "trained",
+                "final_loss": 0.199728265513356,
+                "train_time": 1.746654748916626
+            }
+        ]
+    }
+}

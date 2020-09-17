@@ -5,7 +5,7 @@ from io import StringIO
 
 from db import db_engine 
 
-drop_table_sql = """drop table census"""
+drop_table_sql = """drop table marketing"""
 
 try:
     conn = psycopg2.connect(db_engine())

@@ -1,0 +1,32 @@
+{
+    "connection": {
+        "host": "0.0.0.0",
+        "port": 5555,
+        "user": "postgres",
+        "password": "1234",
+        "db": "db"
+    },
+    "automl": {
+        "table": "marketing",
+        "features": [
+            "age",
+            "job",
+            "marital",
+            "education",
+            "default_payment",
+            "balance",
+            "housing",
+            "loan",
+            "day",
+            "month",
+            "duration",
+            "campaign",
+            "pdays",
+            "previous",
+            "poutcome"
+        ],
+        "target": "response",
+        "predicted": "predicted_response",
+        "id": "id"
+    }
+}

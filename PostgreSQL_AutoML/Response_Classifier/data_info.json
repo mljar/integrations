@@ -1,0 +1,82 @@
+{
+    "columns": [
+        "age",
+        "job",
+        "marital",
+        "education",
+        "default_payment",
+        "balance",
+        "housing",
+        "loan",
+        "day",
+        "month",
+        "duration",
+        "campaign",
+        "pdays",
+        "previous",
+        "poutcome"
+    ],
+    "rows": 32672,
+    "cols": 15,
+    "target_is_numeric": false,
+    "columns_info": {
+        "age": [
+            "scale"
+        ],
+        "job": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "marital": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "education": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "default_payment": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "balance": [
+            "scale"
+        ],
+        "housing": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "loan": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "day": [
+            "scale"
+        ],
+        "month": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "duration": [
+            "scale"
+        ],
+        "campaign": [
+            "scale"
+        ],
+        "pdays": [
+            "scale"
+        ],
+        "previous": [
+            "scale"
+        ],
+        "poutcome": [
+            "categorical",
+            "categorical_to_onehot"
+        ]
+    },
+    "target_info": [
+        "convert_0_1"
+    ],
+    "n_features": 15,
+    "n_classes": 2
+}

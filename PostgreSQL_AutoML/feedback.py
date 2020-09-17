@@ -1,30 +1,18 @@
-import time
+""" Compute accuracy of predictions """
 import json
 import numpy as np
 import pandas as pd
-import psycopg2
-from io import StringIO
-from supervised import AutoML
-
-from db import db_engine 
-
-get_data_sql = f"select * from census where income = ''"
-
-try:
-    conn = psycopg2.connect(db_engine())
-    cur = conn.cursor()
-
-    cur.execute(get_data_sql)
-    df = pd.DataFrame(cur.fetchall(), columns=[elt[0] for elt in cur.description])
-    print("New records:", df.shape[0])
-
-    if df.shape[0] > 0:
-        # compute accuracy
-        test = pd.read_csv("data/Adult_test.csv")
-        accuracy = np.sum(test["income"] == df["predicted_income"]) / test.shape[0] * 100.0
-        print(f"Accuracy: {accuracy}%")
+from db import get_predictions
 
 
-    cur.close()
-except Exception as e:
-    print("Problems:", str(e))
+config = json.load(open("config.json"))
+target = config["automl"]["target"]
+predicted = config["automl"]["predicted"]
+id_column = config["automl"]["id"]
+
+test = pd.read_csv("data/test.csv", index_col=id_column)
+predictions = get_predictions()
+test[predicted] = predictions[predicted]
+
+accuracy = np.round(np.sum(test[predicted] == test[target]) / test.shape[0] * 100.0, 2)
+print(f"Accuracy: {accuracy}%")

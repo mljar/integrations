@@ -1,0 +1,358 @@
+{
+    "uid": "01b1b690-fb85-4ef5-92c9-93e6a9a7c1ad",
+    "name": "3_Linear",
+    "preprocessing": [
+        {
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "default_payment": {
+                            "no": 0,
+                            "yes": 1
+                        },
+                        "housing": {
+                            "no": 0,
+                            "yes": 1
+                        },
+                        "loan": {
+                            "no": 0,
+                            "yes": 1
+                        }
+                    }
+                },
+                {
+                    "convert_method": "categorical_to_onehot",
+                    "convert_params": {
+                        "job": {
+                            "new_columns": [
+                                "job_admin.",
+                                "job_blue-collar",
+                                "job_entrepreneur",
+                                "job_housemaid",
+                                "job_management",
+                                "job_other",
+                                "job_retired",
+                                "job_self-employed",
+                                "job_services",
+                                "job_student",
+                                "job_technician",
+                                "job_unemployed"
+                            ],
+                            "unique_values": [
+                                "admin.",
+                                "blue-collar",
+                                "entrepreneur",
+                                "housemaid",
+                                "management",
+                                "other",
+                                "retired",
+                                "self-employed",
+                                "services",
+                                "student",
+                                "technician",
+                                "unemployed"
+                            ],
+                            "old_column": "job"
+                        },
+                        "marital": {
+                            "new_columns": [
+                                "marital_divorced",
+                                "marital_married",
+                                "marital_single"
+                            ],
+                            "unique_values": [
+                                "divorced",
+                                "married",
+                                "single"
+                            ],
+                            "old_column": "marital"
+                        },
+                        "education": {
+                            "new_columns": [
+                                "education_primary",
+                                "education_secondary",
+                                "education_tertiary"
+                            ],
+                            "unique_values": [
+                                "primary",
+                                "secondary",
+                                "tertiary"
+                            ],
+                            "old_column": "education"
+                        },
+                        "month": {
+                            "new_columns": [
+                                "month_apr",
+                                "month_aug",
+                                "month_dec",
+                                "month_feb",
+                                "month_jan",
+                                "month_jul",
+                                "month_jun",
+                                "month_mar",
+                                "month_may",
+                                "month_nov",
+                                "month_oct",
+                                "month_sep"
+                            ],
+                            "unique_values": [
+                                "apr",
+                                "aug",
+                                "dec",
+                                "feb",
+                                "jan",
+                                "jul",
+                                "jun",
+                                "mar",
+                                "may",
+                                "nov",
+                                "oct",
+                                "sep"
+                            ],
+                            "old_column": "month"
+                        },
+                        "poutcome": {
+                            "new_columns": [
+                                "poutcome_failure",
+                                "poutcome_success",
+                                "poutcome_unknown"
+                            ],
+                            "unique_values": [
+                                "failure",
+                                "success",
+                                "unknown"
+                            ],
+                            "old_column": "poutcome"
+                        }
+                    }
+                }
+            ],
+            "scale": [
+                {
+                    "scale": [
+                        10.48902870869638,
+                        0.13914647171182049,
+                        1700.037900973374,
+                        0.4960963453064134,
+                        0.3727509827111733,
+                        8.287919261675338,
+                        4.2727434111761,
+                        3.0408426913238173,
+                        91.97761745486083,
+                        1.5629704352922473
+                    ],
+                    "mean": [
+                        40.80158341495266,
+                        0.019751877244531504,
+                        1062.6343454129938,
+                        0.5623571661769508,
+                        0.16674828599412342,
+                        15.84043421482207,
+                        4.3057378387202085,
+                        2.761549134835129,
+                        33.005386875612146,
+                        0.439479268690826
+                    ],
+                    "var": [
+                        110.01972325185683,
+                        0.01936174058984846,
+                        2890128.8647459554,
+                        0.24611158382638013,
+                        0.1389432951121454,
+                        68.68960568804907,
+                        18.25633625774877,
+                        9.246724273377476,
+                        8459.882112672722,
+                        2.4428765815976368
+                    ],
+                    "n_samples_seen": 24504,
+                    "n_features_in": 10,
+                    "columns": [
+                        "age",
+                        "default_payment",
+                        "balance",
+                        "housing",
+                        "loan",
+                        "day",
+                        "duration",
+                        "campaign",
+                        "pdays",
+                        "previous"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "categorical_y": {
+                "no": 0,
+                "yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "age": [
+                        "scale_normal"
+                    ],
+                    "job": [
+                        "categorical_to_onehot"
+                    ],
+                    "marital": [
+                        "categorical_to_onehot"
+                    ],
+                    "education": [
+                        "categorical_to_onehot"
+                    ],
+                    "default_payment": [
+                        "categorical_to_int",
+                        "scale_normal"
+                    ],
+                    "balance": [
+                        "scale_normal"
+                    ],
+                    "housing": [
+                        "categorical_to_int",
+                        "scale_normal"
+                    ],
+                    "loan": [
+                        "categorical_to_int",
+                        "scale_normal"
+                    ],
+                    "day": [
+                        "scale_normal"
+                    ],
+                    "month": [
+                        "categorical_to_onehot"
+                    ],
+                    "duration": [
+                        "scale_normal"
+                    ],
+                    "campaign": [
+                        "scale_normal"
+                    ],
+                    "pdays": [
+                        "scale_normal"
+                    ],
+                    "previous": [
+                        "scale_normal"
+                    ],
+                    "poutcome": [
+                        "categorical_to_onehot"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.23.2",
+            "algorithm_name": "Logistic Regression",
+            "algorithm_short_name": "Linear",
+            "uid": "68da9370-c9db-424b-811c-117c1dc03299",
+            "params": {
+                "model_type": "Linear",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "age": [
+                    "scale_normal"
+                ],
+                "job": [
+                    "categorical_to_onehot"
+                ],
+                "marital": [
+                    "categorical_to_onehot"
+                ],
+                "education": [
+                    "categorical_to_onehot"
+                ],
+                "default_payment": [
+                    "categorical_to_int",
+                    "scale_normal"
+                ],
+                "balance": [
+                    "scale_normal"
+                ],
+                "housing": [
+                    "categorical_to_int",
+                    "scale_normal"
+                ],
+                "loan": [
+                    "categorical_to_int",
+                    "scale_normal"
+                ],
+                "day": [
+                    "scale_normal"
+                ],
+                "month": [
+                    "categorical_to_onehot"
+                ],
+                "duration": [
+                    "scale_normal"
+                ],
+                "campaign": [
+                    "scale_normal"
+                ],
+                "pdays": [
+                    "scale_normal"
+                ],
+                "previous": [
+                    "scale_normal"
+                ],
+                "poutcome": [
+                    "categorical_to_onehot"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "Response_Classifier/X.parquet",
+            "y_path": "Response_Classifier/y.parquet",
+            "results_path": "Response_Classifier"
+        },
+        "learner": {
+            "model_type": "Linear",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "3_Linear",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "Response_Classifier/3_Linear/learner_1.linear"
+    ],
+    "predictions_fname": "Response_Classifier/3_Linear/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.23707852163101176,
+    "train_time": 6.901705026626587,
+    "is_stacked": false,
+    "threshold": 0.41772038797834843
+}

@@ -1,0 +1,261 @@
+{
+    "uid": "6e6ca397-cd33-4a8b-ad34-6ebff618e1c3",
+    "name": "2_DecisionTree",
+    "preprocessing": [
+        {
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "default_payment": {
+                            "no": 0,
+                            "yes": 1
+                        },
+                        "housing": {
+                            "no": 0,
+                            "yes": 1
+                        },
+                        "loan": {
+                            "no": 0,
+                            "yes": 1
+                        }
+                    }
+                },
+                {
+                    "convert_method": "categorical_to_onehot",
+                    "convert_params": {
+                        "job": {
+                            "new_columns": [
+                                "job_admin.",
+                                "job_blue-collar",
+                                "job_entrepreneur",
+                                "job_housemaid",
+                                "job_management",
+                                "job_other",
+                                "job_retired",
+                                "job_self-employed",
+                                "job_services",
+                                "job_student",
+                                "job_technician",
+                                "job_unemployed"
+                            ],
+                            "unique_values": [
+                                "admin.",
+                                "blue-collar",
+                                "entrepreneur",
+                                "housemaid",
+                                "management",
+                                "other",
+                                "retired",
+                                "self-employed",
+                                "services",
+                                "student",
+                                "technician",
+                                "unemployed"
+                            ],
+                            "old_column": "job"
+                        },
+                        "marital": {
+                            "new_columns": [
+                                "marital_divorced",
+                                "marital_married",
+                                "marital_single"
+                            ],
+                            "unique_values": [
+                                "divorced",
+                                "married",
+                                "single"
+                            ],
+                            "old_column": "marital"
+                        },
+                        "education": {
+                            "new_columns": [
+                                "education_primary",
+                                "education_secondary",
+                                "education_tertiary"
+                            ],
+                            "unique_values": [
+                                "primary",
+                                "secondary",
+                                "tertiary"
+                            ],
+                            "old_column": "education"
+                        },
+                        "month": {
+                            "new_columns": [
+                                "month_apr",
+                                "month_aug",
+                                "month_dec",
+                                "month_feb",
+                                "month_jan",
+                                "month_jul",
+                                "month_jun",
+                                "month_mar",
+                                "month_may",
+                                "month_nov",
+                                "month_oct",
+                                "month_sep"
+                            ],
+                            "unique_values": [
+                                "apr",
+                                "aug",
+                                "dec",
+                                "feb",
+                                "jan",
+                                "jul",
+                                "jun",
+                                "mar",
+                                "may",
+                                "nov",
+                                "oct",
+                                "sep"
+                            ],
+                            "old_column": "month"
+                        },
+                        "poutcome": {
+                            "new_columns": [
+                                "poutcome_failure",
+                                "poutcome_success",
+                                "poutcome_unknown"
+                            ],
+                            "unique_values": [
+                                "failure",
+                                "success",
+                                "unknown"
+                            ],
+                            "old_column": "poutcome"
+                        }
+                    }
+                }
+            ],
+            "categorical_y": {
+                "no": 0,
+                "yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "job": [
+                        "categorical_to_onehot"
+                    ],
+                    "marital": [
+                        "categorical_to_onehot"
+                    ],
+                    "education": [
+                        "categorical_to_onehot"
+                    ],
+                    "default_payment": [
+                        "categorical_to_int"
+                    ],
+                    "housing": [
+                        "categorical_to_int"
+                    ],
+                    "loan": [
+                        "categorical_to_int"
+                    ],
+                    "month": [
+                        "categorical_to_onehot"
+                    ],
+                    "poutcome": [
+                        "categorical_to_onehot"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.23.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "5a921848-cc14-4dac-a547-2e760cae8408",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "criterion": "gini",
+                "max_depth": 3,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 1,
+            "train_cant_improve_limit": 0,
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "job": [
+                    "categorical_to_onehot"
+                ],
+                "marital": [
+                    "categorical_to_onehot"
+                ],
+                "education": [
+                    "categorical_to_onehot"
+                ],
+                "default_payment": [
+                    "categorical_to_int"
+                ],
+                "housing": [
+                    "categorical_to_int"
+                ],
+                "loan": [
+                    "categorical_to_int"
+                ],
+                "month": [
+                    "categorical_to_onehot"
+                ],
+                "poutcome": [
+                    "categorical_to_onehot"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "Response_Classifier/X.parquet",
+            "y_path": "Response_Classifier/y.parquet",
+            "results_path": "Response_Classifier"
+        },
+        "learner": {
+            "model_type": "Decision Tree",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "criterion": "gini",
+            "max_depth": 3,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "2_DecisionTree",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "Response_Classifier/2_DecisionTree/learner_1.decision_tree"
+    ],
+    "predictions_fname": "Response_Classifier/2_DecisionTree/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.2691438840933139,
+    "train_time": 15.189645767211914,
+    "is_stacked": false,
+    "threshold": 0.47475496919969074
+}
