@@ -1,5 +1,6 @@
 # PostgreSQL integration with AutoML
 
+![](https://raw.githubusercontent.com/mljar/mljar-examples/master/media/PostgreSQL_AutoML.png)
 
 Set up example database:
 ```
