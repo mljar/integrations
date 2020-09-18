@@ -2,8 +2,13 @@
 
 ![](https://raw.githubusercontent.com/mljar/mljar-examples/master/media/PostgreSQL_AutoML_v2.png)
 
+---
+
 Article available on [MLJAR's blog](https://mljar.com/blog/postgresql-machine-learning/).
 
+**`mljar-supervised`** autoML python package: https://github.com/mljar/mljar-supervised
+
+---
 Set up example database:
 ```
 docker build -t mydb:latest .
