@@ -1,0 +1,80 @@
+{
+    "uid": "cbb62ad7-bec0-4cf9-8b48-66d2945c7915",
+    "name": "2_DecisionTree",
+    "preprocessing": [
+        {
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {},
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.23.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "6708b74e-3114-494e-8e39-ec36293bf14d",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "criterion": "gini",
+                "max_depth": 3,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 1,
+            "train_cant_improve_limit": 0,
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "Automl_output/X.parquet",
+            "y_path": "Automl_output/y.parquet",
+            "results_path": "Automl_output"
+        },
+        "learner": {
+            "model_type": "Decision Tree",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "criterion": "gini",
+            "max_depth": 3,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "2_DecisionTree",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "Automl_output/2_DecisionTree/learner_1.decision_tree"
+    ],
+    "predictions_fname": "Automl_output/2_DecisionTree/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.05978177785225183,
+    "train_time": 17.509246587753296,
+    "is_stacked": false,
+    "threshold": 0.501404720171385
+}

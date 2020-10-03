@@ -1,0 +1,44 @@
+{
+    "mode": "Explain",
+    "ml_task": "binary_classification",
+    "results_path": "Automl_output",
+    "total_time_limit": 3600,
+    "model_time_limit": null,
+    "algorithms": [
+        "Baseline",
+        "Linear",
+        "Decision Tree",
+        "Random Forest",
+        "Xgboost",
+        "Neural Network"
+    ],
+    "train_ensemble": true,
+    "stack_models": false,
+    "eval_metric": "logloss",
+    "validation_strategy": {
+        "validation_type": "split",
+        "train_ratio": 0.75,
+        "shuffle": true,
+        "stratify": true,
+        "X_path": "Automl_output/X.parquet",
+        "y_path": "Automl_output/y.parquet",
+        "results_path": "Automl_output"
+    },
+    "verbose": 1,
+    "explain_level": 2,
+    "golden_features": false,
+    "features_selection": false,
+    "start_random_models": 1,
+    "hill_climbing_steps": 0,
+    "top_models_to_improve": 0,
+    "random_state": 1234,
+    "saved": [
+        "Automl_output/1_Baseline",
+        "Automl_output/2_DecisionTree",
+        "Automl_output/3_Linear",
+        "Automl_output/4_Default_RandomForest",
+        "Automl_output/5_Default_Xgboost",
+        "Automl_output/6_Default_NeuralNetwork",
+        "Automl_output/Ensemble"
+    ]
+}

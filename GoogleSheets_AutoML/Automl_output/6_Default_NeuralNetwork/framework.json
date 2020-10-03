@@ -1,0 +1,259 @@
+{
+    "uid": "7d004613-a1f7-4a76-8a12-36323309eaee",
+    "name": "6_Default_NeuralNetwork",
+    "preprocessing": [
+        {
+            "scale": [
+                {
+                    "scale": [
+                        48040.494671516964,
+                        2.80439973117017,
+                        2.049864830294544,
+                        2.9705616777772876,
+                        1.9194397164374315,
+                        2.065057211132694,
+                        2.54761392424369,
+                        2.035163040677249,
+                        2.1416958926951772,
+                        1.5316260819951801,
+                        2.218625668988769,
+                        2.2828639825830046,
+                        1.671697242819897,
+                        2.6057222843949637,
+                        198.57323196129465
+                    ],
+                    "mean": [
+                        93975.8344901228,
+                        -0.3138102568772501,
+                        0.2574880230170836,
+                        -0.4671369814221966,
+                        0.30024778271375113,
+                        -0.2053063641523114,
+                        -0.3972226749930589,
+                        0.07175769066729165,
+                        -0.3788383126519517,
+                        0.2731434737353813,
+                        -0.4009271004693616,
+                        -0.45655262663104645,
+                        -0.2707765835509588,
+                        -0.4366257092383977,
+                        85.65398469478555
+                    ],
+                    "var": [
+                        2307889128.2840495,
+                        7.86465785218732,
+                        4.201945822478481,
+                        8.824236681479015,
+                        3.684248825037407,
+                        4.264461285251139,
+                        6.490336707000334,
+                        4.141888602138666,
+                        4.586861296787393,
+                        2.345878455047906,
+                        4.9222998590958635,
+                        5.211467962974737,
+                        2.794571671651646,
+                        6.789788623392507,
+                        39431.32845155413
+                    ],
+                    "n_samples_seen": 5619,
+                    "n_features_in": 15,
+                    "columns": [
+                        "Time",
+                        "V1",
+                        "V2",
+                        "V3",
+                        "V4",
+                        "V5",
+                        "V7",
+                        "V8",
+                        "V10",
+                        "V11",
+                        "V12",
+                        "V14",
+                        "V16",
+                        "V17",
+                        "Amount"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "Time": [
+                        "scale_normal"
+                    ],
+                    "V1": [
+                        "scale_normal"
+                    ],
+                    "V2": [
+                        "scale_normal"
+                    ],
+                    "V3": [
+                        "scale_normal"
+                    ],
+                    "V4": [
+                        "scale_normal"
+                    ],
+                    "V5": [
+                        "scale_normal"
+                    ],
+                    "V7": [
+                        "scale_normal"
+                    ],
+                    "V8": [
+                        "scale_normal"
+                    ],
+                    "V10": [
+                        "scale_normal"
+                    ],
+                    "V11": [
+                        "scale_normal"
+                    ],
+                    "V12": [
+                        "scale_normal"
+                    ],
+                    "V14": [
+                        "scale_normal"
+                    ],
+                    "V16": [
+                        "scale_normal"
+                    ],
+                    "V17": [
+                        "scale_normal"
+                    ],
+                    "Amount": [
+                        "scale_normal"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "Neural Network",
+            "algorithm_short_name": "Neural Network",
+            "uid": "d53d39b2-5b5b-4ee8-b4e1-fdc1ec014e2f",
+            "params": {
+                "model_type": "Neural Network",
+                "ml_task": "binary_classification",
+                "dense_layers": 2,
+                "dense_1_size": 32,
+                "dense_2_size": 16,
+                "dropout": 0,
+                "learning_rate": 0.05,
+                "momentum": 0.9,
+                "decay": 0.001,
+                "seed": 6,
+                "explain_level": 2,
+                "model_architecture_json": "\"{\\\"class_name\\\": \\\"Sequential\\\", \\\"config\\\": {\\\"name\\\": \\\"sequential_1\\\", \\\"layers\\\": [{\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_1\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 30], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 32, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_2\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 30], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 16, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_3\\\", \\\"trainable\\\": true, \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 1, \\\"activation\\\": \\\"sigmoid\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}]}, \\\"keras_version\\\": \\\"2.3.1\\\", \\\"backend\\\": \\\"tensorflow\\\"}\""
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "one_step": 10,
+            "train_cant_improve_limit": 5,
+            "max_steps": 500,
+            "min_steps": 5,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "Time": [
+                    "scale_normal"
+                ],
+                "V1": [
+                    "scale_normal"
+                ],
+                "V2": [
+                    "scale_normal"
+                ],
+                "V3": [
+                    "scale_normal"
+                ],
+                "V4": [
+                    "scale_normal"
+                ],
+                "V5": [
+                    "scale_normal"
+                ],
+                "V7": [
+                    "scale_normal"
+                ],
+                "V8": [
+                    "scale_normal"
+                ],
+                "V10": [
+                    "scale_normal"
+                ],
+                "V11": [
+                    "scale_normal"
+                ],
+                "V12": [
+                    "scale_normal"
+                ],
+                "V14": [
+                    "scale_normal"
+                ],
+                "V16": [
+                    "scale_normal"
+                ],
+                "V17": [
+                    "scale_normal"
+                ],
+                "Amount": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "Automl_output/X.parquet",
+            "y_path": "Automl_output/y.parquet",
+            "results_path": "Automl_output"
+        },
+        "learner": {
+            "model_type": "Neural Network",
+            "ml_task": "binary_classification",
+            "dense_layers": 2,
+            "dense_1_size": 32,
+            "dense_2_size": 16,
+            "dropout": 0,
+            "learning_rate": 0.05,
+            "momentum": 0.9,
+            "decay": 0.001,
+            "seed": 6,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "6_Default_NeuralNetwork",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "Automl_output/6_Default_NeuralNetwork/learner_1.neural_network"
+    ],
+    "predictions_fname": "Automl_output/6_Default_NeuralNetwork/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.05373674077551541,
+    "train_time": 12.208711624145508,
+    "is_stacked": false,
+    "threshold": 0.5033790469169617
+}
