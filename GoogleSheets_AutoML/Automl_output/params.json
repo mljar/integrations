@@ -2,7 +2,7 @@
     "mode": "Explain",
     "ml_task": "binary_classification",
     "results_path": "Automl_output",
-    "total_time_limit": 3600,
+    "total_time_limit": 10,
     "model_time_limit": null,
     "algorithms": [
         "Baseline",
@@ -35,10 +35,6 @@
     "saved": [
         "Automl_output/1_Baseline",
         "Automl_output/2_DecisionTree",
-        "Automl_output/3_Linear",
-        "Automl_output/4_Default_RandomForest",
-        "Automl_output/5_Default_Xgboost",
-        "Automl_output/6_Default_NeuralNetwork",
         "Automl_output/Ensemble"
     ]
 }

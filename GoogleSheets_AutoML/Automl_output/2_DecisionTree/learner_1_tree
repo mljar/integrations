@@ -11,37 +11,37 @@ digraph G {
     node2 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/tmp/node2_61601.svg"/></td>
-            </tr>
-            </table>>]
-	node5 [margin="0" shape=none label=<<table border="0">
-            
-            <tr>
-                    <td><img src="/tmp/node5_61601.svg"/></td>
+                    <td><img src="/tmp/node2_92913.svg"/></td>
             </tr>
             </table>>]
 	node1 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/tmp/node1_61601.svg"/></td>
+                    <td><img src="/tmp/node1_92913.svg"/></td>
+            </tr>
+            </table>>]
+	node7 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="/tmp/node7_92913.svg"/></td>
             </tr>
             </table>>]
 	node10 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/tmp/node10_61601.svg"/></td>
+                    <td><img src="/tmp/node10_92913.svg"/></td>
             </tr>
             </table>>]
-	node8 [margin="0" shape=none label=<<table border="0">
+	node6 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/tmp/node8_61601.svg"/></td>
+                    <td><img src="/tmp/node6_92913.svg"/></td>
             </tr>
             </table>>]
 	node0 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/tmp/node0_61601.svg"/></td>
+                    <td><img src="/tmp/node0_92913.svg"/></td>
             </tr>
             </table>>]
     node2 -> leaf3 [penwidth=0.3 color="#444443" label=<>]
@@ -52,20 +52,20 @@ digraph G {
                 leaf3 -> leaf4 [style=invis]
             }
             
-	node5 -> leaf6 [penwidth=0.3 color="#444443" label=<>]
-	node5 -> leaf7 [penwidth=0.3 color="#444443" label=<>]
+	node1 -> node2 [penwidth=0.3 color="#444443" label=<>]
+	node1 -> leaf5 [penwidth=0.3 color="#444443" label=<>]
 	
             {
                 rank=same;
-                leaf6 -> leaf7 [style=invis]
+                node2 -> leaf5 [style=invis]
             }
             
-	node1 -> node2 [penwidth=0.3 color="#444443" label=<>]
-	node1 -> node5 [penwidth=0.3 color="#444443" label=<>]
+	node7 -> leaf8 [penwidth=0.3 color="#444443" label=<>]
+	node7 -> leaf9 [penwidth=0.3 color="#444443" label=<>]
 	
             {
                 rank=same;
-                node2 -> node5 [style=invis]
+                leaf8 -> leaf9 [style=invis]
             }
             
 	node10 -> leaf11 [penwidth=0.3 color="#444443" label=<>]
@@ -76,62 +76,62 @@ digraph G {
                 leaf11 -> leaf12 [style=invis]
             }
             
-	node8 -> leaf9 [penwidth=0.3 color="#444443" label=<>]
-	node8 -> node10 [penwidth=0.3 color="#444443" label=<>]
+	node6 -> node7 [penwidth=0.3 color="#444443" label=<>]
+	node6 -> node10 [penwidth=0.3 color="#444443" label=<>]
 	
             {
                 rank=same;
-                leaf9 -> node10 [style=invis]
+                node7 -> node10 [style=invis]
             }
             
 	node0 -> node1 [penwidth=0.3 color="#444443" label=<&lt;>]
-	node0 -> node8 [penwidth=0.3 color="#444443" label=<&ge;>]
+	node0 -> node6 [penwidth=0.3 color="#444443" label=<&ge;>]
 	
             {
                 rank=same;
-                node1 -> node8 [style=invis]
+                node1 -> node6 [style=invis]
             }
             
     leaf3 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf3_61601.svg"/></td>
+                <td><img src="/tmp/leaf3_92913.svg"/></td>
         </tr>
         </table>>]
 	leaf4 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf4_61601.svg"/></td>
+                <td><img src="/tmp/leaf4_92913.svg"/></td>
         </tr>
         </table>>]
-	leaf6 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+	leaf5 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf6_61601.svg"/></td>
+                <td><img src="/tmp/leaf5_92913.svg"/></td>
         </tr>
         </table>>]
-	leaf7 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+	leaf8 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf7_61601.svg"/></td>
+                <td><img src="/tmp/leaf8_92913.svg"/></td>
         </tr>
         </table>>]
 	leaf9 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf9_61601.svg"/></td>
+                <td><img src="/tmp/leaf9_92913.svg"/></td>
         </tr>
         </table>>]
 	leaf11 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf11_61601.svg"/></td>
+                <td><img src="/tmp/leaf11_92913.svg"/></td>
         </tr>
         </table>>]
 	leaf12 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/tmp/leaf12_61601.svg"/></td>
+                <td><img src="/tmp/leaf12_92913.svg"/></td>
         </tr>
         </table>>]
 
@@ -142,7 +142,7 @@ digraph G {
                 
         <table border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td border="0" cellspacing="0" cellpadding="0"><img src="/tmp/legend_61601.svg"/></td>
+                <td border="0" cellspacing="0" cellpadding="0"><img src="/tmp/legend_92913.svg"/></td>
             </tr>
         </table>
         

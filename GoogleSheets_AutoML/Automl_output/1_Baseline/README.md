@@ -14,25 +14,25 @@ logloss
 
 ## Training time
 
-0.1 seconds
+0.0 seconds
 
 ## Metric details
-|           |    score |   threshold |
-|:----------|---------:|------------:|
-| logloss   | 0.242292 |  nan        |
-| auc       | 0.5      |  nan        |
-| f1        | 0.123246 |    0.059103 |
-| accuracy  | 0.06567  |    0.059103 |
-| precision | 0.06567  |    0.059103 |
-| recall    | 1        |    0.059103 |
-| mcc       | 0        |    0.059103 |
+|           |     score |   threshold |
+|:----------|----------:|------------:|
+| logloss   | 0.241157  | nan         |
+| auc       | 0.5       | nan         |
+| f1        | 0.122494  |   0.0587421 |
+| accuracy  | 0.0652432 |   0.0587421 |
+| precision | 0.0652432 |   0.0587421 |
+| recall    | 1         |   0.0587421 |
+| mcc       | 0         |   0.0587421 |
 
 
-## Confusion matrix (at threshold=0.059103)
+## Confusion matrix (at threshold=0.058742)
 |                     |   Predicted as negative |   Predicted as positive |
 |:--------------------|------------------------:|------------------------:|
-| Labeled as negative |                       0 |                    1750 |
-| Labeled as positive |                       0 |                     123 |
+| Labeled as negative |                       0 |                    1576 |
+| Labeled as positive |                       0 |                     110 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)

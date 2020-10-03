@@ -4,18 +4,14 @@
     "optimize_metric": "logloss",
     "selected_models": [
         {
-            "model": "3_Linear",
-            "repeat": 2.0
-        },
-        {
-            "model": "5_Default_Xgboost",
-            "repeat": 3.0
+            "model": "2_DecisionTree",
+            "repeat": 1.0
         }
     ],
     "predictions_fname": "Automl_output/Ensemble/predictions_ensemble.csv",
     "metric_name": "logloss",
-    "final_loss": 0.0446415011003282,
-    "train_time": 0.8711564540863037,
+    "final_loss": 0.06295003501529017,
+    "train_time": 0.5887138843536377,
     "is_stacked": false,
-    "threshold": 0.5006121811762845
+    "threshold": 0.01049097775912715
 }

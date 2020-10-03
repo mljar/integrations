@@ -1,7 +1,7 @@
 {
     "fit_level": "finished",
     "time_controller": {
-        "total_time_limit": 3600,
+        "total_time_limit": 10,
         "model_time_limit": null,
         "steps": [
             "simple_algorithms",
@@ -21,49 +21,25 @@
                 "model_name": "prepare_data",
                 "model_type": "prepare_data",
                 "fit_level": "prepare_data",
-                "train_time": 7.75300407409668
+                "train_time": 5.907579183578491
             },
             {
                 "model_name": "1_Baseline",
                 "model_type": "Baseline",
                 "fit_level": "simple_algorithms",
-                "train_time": 0.20228052139282227
+                "train_time": 0.152876615524292
             },
             {
                 "model_name": "2_DecisionTree",
                 "model_type": "Decision Tree",
                 "fit_level": "simple_algorithms",
-                "train_time": 18.626044511795044
-            },
-            {
-                "model_name": "3_Linear",
-                "model_type": "Linear",
-                "fit_level": "simple_algorithms",
-                "train_time": 6.094332933425903
-            },
-            {
-                "model_name": "4_Default_RandomForest",
-                "model_type": "Random Forest",
-                "fit_level": "default_algorithms",
-                "train_time": 14.514412879943848
-            },
-            {
-                "model_name": "5_Default_Xgboost",
-                "model_type": "Xgboost",
-                "fit_level": "default_algorithms",
-                "train_time": 6.9018425941467285
-            },
-            {
-                "model_name": "6_Default_NeuralNetwork",
-                "model_type": "Neural Network",
-                "fit_level": "default_algorithms",
-                "train_time": 12.705385446548462
+                "train_time": 13.866323232650757
             },
             {
                 "model_name": "Ensemble",
                 "model_type": "Ensemble",
                 "fit_level": "ensemble",
-                "train_time": 0.8711564540863037
+                "train_time": 0.5887138843536377
             }
         ],
         "is_hill_climbing": false,
@@ -103,8 +79,8 @@
                 "explain_level": 2,
                 "name": "1_Baseline",
                 "status": "trained",
-                "final_loss": 0.24229187445875108,
-                "train_time": 0.20228052139282227
+                "final_loss": 0.24115697532865146,
+                "train_time": 0.152876615524292
             },
             {
                 "additional": {
@@ -142,8 +118,8 @@
                 "explain_level": 2,
                 "name": "2_DecisionTree",
                 "status": "trained",
-                "final_loss": 0.05978177785225183,
-                "train_time": 18.626044511795044
+                "final_loss": 0.06295003501529017,
+                "train_time": 13.866323232650757
             },
             {
                 "additional": {
@@ -216,15 +192,14 @@
                 "learner": {
                     "model_type": "Linear",
                     "ml_task": "binary_classification",
-                    "seed": 1235,
-                    "explain_level": 2
+                    "seed": 1235
                 },
                 "ml_task": "binary_classification",
                 "explain_level": 2,
                 "name": "3_Linear",
-                "status": "trained",
-                "final_loss": 0.0481050453128485,
-                "train_time": 6.094332933425903
+                "status": "skipped",
+                "final_loss": 0.06295003501529017,
+                "train_time": 13.866323232650757
             }
         ],
         "default_algorithms": [
@@ -261,15 +236,14 @@
                     "max_features": 0.6,
                     "min_samples_split": 30,
                     "max_depth": 6,
-                    "seed": 4,
-                    "explain_level": 2
+                    "seed": 3
                 },
                 "ml_task": "binary_classification",
                 "explain_level": 2,
-                "name": "4_Default_RandomForest",
-                "status": "trained",
-                "final_loss": 0.05337205176955622,
-                "train_time": 14.514412879943848
+                "name": "3_Default_RandomForest",
+                "status": "skipped",
+                "final_loss": 0.06295003501529017,
+                "train_time": 13.866323232650757
             },
             {
                 "additional": {
@@ -304,15 +278,14 @@
                     "min_child_weight": 1,
                     "subsample": 1.0,
                     "colsample_bytree": 1.0,
-                    "seed": 5,
-                    "explain_level": 2
+                    "seed": 4
                 },
                 "ml_task": "binary_classification",
                 "explain_level": 2,
-                "name": "5_Default_Xgboost",
-                "status": "trained",
-                "final_loss": 0.04691869098888546,
-                "train_time": 6.9018425941467285
+                "name": "4_Default_Xgboost",
+                "status": "skipped",
+                "final_loss": 0.06295003501529017,
+                "train_time": 13.866323232650757
             },
             {
                 "additional": {
@@ -395,15 +368,14 @@
                     "learning_rate": 0.05,
                     "momentum": 0.9,
                     "decay": 0.001,
-                    "seed": 6,
-                    "explain_level": 2
+                    "seed": 5
                 },
                 "ml_task": "binary_classification",
                 "explain_level": 2,
-                "name": "6_Default_NeuralNetwork",
-                "status": "trained",
-                "final_loss": 0.05373674077551541,
-                "train_time": 12.705385446548462
+                "name": "5_Default_NeuralNetwork",
+                "status": "skipped",
+                "final_loss": 0.06295003501529017,
+                "train_time": 13.866323232650757
             }
         ],
         "ensemble": [
@@ -412,8 +384,8 @@
                 "is_stacked": false,
                 "name": "Ensemble",
                 "status": "trained",
-                "final_loss": 0.0446415011003282,
-                "train_time": 0.8711564540863037
+                "final_loss": 0.06295003501529017,
+                "train_time": 0.5887138843536377
             }
         ]
     }

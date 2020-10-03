@@ -2,7 +2,7 @@ import gspread
 import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 
-def get_train_data(data,path):
+def get_client(path):
 
 
     """
@@ -17,6 +17,10 @@ def get_train_data(data,path):
     creds = ServiceAccountCredentials.from_json_keyfile_name(path, scope)
     # authorize the clientsheet 
     client = gspread.authorize(creds)
+    return client
+
+
+def get_train_data(client,data):
 
     # get the instance of the Spreadsheet
     sheet = client.open(data)
@@ -27,3 +31,21 @@ def get_train_data(data,path):
     records_df = pd.DataFrame.from_dict(records_data)
 
     return records_df.drop(['Class'],axis=1),records_df['Class']
+
+
+def write_out(client,data,email):
+
+    out = client.create("automl")
+
+    for i,col in enumerate(["train","test"]):
+
+        df = pd.DataFrame()
+        df[col+"_target"] = data[col+"_target"]
+        df[col+"_prediction"] = data[col+"_prediction"]
+
+        worksheet = out.add_worksheet(col,rows=df.shape[0],cols=df.shape[1])
+        worksheet.update([df.columns.values.tolist()]+df.values.tolist())
+
+    out.share(email,perm_type="user",role="owner")
+
+
