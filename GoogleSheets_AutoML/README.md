@@ -2,6 +2,9 @@
 This tutorial will help you to use mljar automl with google sheets. Follow the steps below to configure Google Sheets API and train automl with your desired sheets data.
 First of all, make sure that you have a google account. If you have a Google account, you can follow these steps to create a Google service account.
 
+Run example,
+`python train_automl.py`
+
 The dataset used here is from [kaggle credit card fraud data](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
 ### Configure Google API
