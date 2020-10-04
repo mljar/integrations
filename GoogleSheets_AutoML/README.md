@@ -5,6 +5,8 @@ First of all, make sure that you have a google account. If you have a Google acc
 Run example,
 `python train_automl.py`
 
+- Checkout the predictions in sheet in your google drive
+
 The dataset used here is from [kaggle credit card fraud data](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
 ### Configure Google API
