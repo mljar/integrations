@@ -5,7 +5,7 @@ First of all, make sure that you have a google account. If you have a Google acc
 Run example,
 `python train_automl.py`
 
-- Checkout the predictions in sheet in your google drive
+- After running, go to your google drive and you will find a sheet named `automl` where the train and test predictions and target is recorded.
 
 The dataset used here is from [kaggle credit card fraud data](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
